@@ -18,10 +18,13 @@ import SwiftUI
     }
     // current region on map
     var mapCamera: MapCameraPosition = MapCameraPosition.region(MKCoordinateRegion())
-    @ObservationIgnored let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+    let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
     
     // show list of locations
     var showLocationsList: Bool = false
+    
+    // show location detail via sheet
+    var sheetLocation: Location? = nil
     
     init() {
         let locations = LocationsDataService.locations
